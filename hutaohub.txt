@@ -1592,12 +1592,6 @@ end)
 
 
 
-if game.PlaceId == 70876832253163 then
-    Tabs.TpT:AddParagraph({
-        Title = "Note",
-        Content = "Use these features with care!"
-    })
-else
     Tabs.TpT:AddSection("↳ End Game")
     
     -- Khởi tạo Toggle
