@@ -2028,6 +2028,23 @@ Tabs.TpT:AddButton({
 
 
 
+---Player tab
+
+
+
+
+Tabs.Player:AddButton({
+    Title = "Tool Air Weld",
+    Callback = function()
+        pcall(function()
+            -- Tải và chạy script từ link
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Shade-vex/DeadRails/refs/heads/main/Air-Weld.lua"))()
+        end)
+    end
+})
+
+
+
 
 
 
