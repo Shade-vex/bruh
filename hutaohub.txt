@@ -29,12 +29,12 @@ local Tabs = {
 }
 
 do
-    local baseUrl = "https://raw.githubusercontent.com/RENBex6969/SkullHUB-deadrails/refs/heads/main/"
-    local Config = loadstring(game:HttpGet(baseUrl .. "Config.lua"))()
-    local Utilities = loadstring(game:HttpGet(baseUrl .. "Util.lua"))()
-    local ESP = loadstring(game:HttpGet(baseUrl .. "ESP.lua"))()(Config, Utilities)
-    local MiddleClick = loadstring(game:HttpGet(baseUrl .. "MiddleClick.lua"))()
-    local Aimbot = loadstring(game:HttpGet(baseUrl .. "Aimbot.lua"))()
+    local baseUrl = "https://raw.githubusercontent.com/Shade-vex/Hutao-hub-code-pro-mode/refs/heads/main/"
+    local Config = loadstring(game:HttpGet(baseUrl .. "Config.lua.txt"))()
+    local Utilities = loadstring(game:HttpGet(baseUrl .. "Util.lua.txt"))()
+    local ESP = loadstring(game:HttpGet(baseUrl .. "ESP.lua.txt"))()(Config, Utilities)
+    local MiddleClick = loadstring(game:HttpGet(baseUrl .. "MiddleClick.lua.txt"))()
+    local Aimbot = loadstring(game:HttpGet(baseUrl .. "Aimbot.lua.txt"))()
     
     ESP.Initialize()
     MiddleClick.Initialize()
@@ -56,7 +56,7 @@ do
                     ["Mode"] = "Normal", -- Normal/Nightmare
                 },
             }
-            AutoBondsURL = baseUrl .. "AutoBonds.lua"
+            AutoBondsURL = baseUrl .. "AutoBonds.lua.txt"
             loadstring(game:HttpGet(AutoBondsURL))()
         end
     end)
@@ -64,7 +64,7 @@ do
     local AfBToggle1 = Tabs.FarT:AddToggle("AfBToggle1", {Title = "Ultimate Auto Farm Bonds", Description = '70+ bonds per run, recommend to use.',Default = false })
     AfBToggle1:OnChanged(function(Value)
         if Value then
-            AutoBondsURl = baseUrl .. "AutoBonds2.lua"
+            AutoBondsURl = baseUrl .. "AutoBonds2.lua.txt"
             loadstring(game:HttpGet(AutoBondsURl))()
         end
     end)
@@ -74,7 +74,7 @@ do
     local AfBToggle12 = Tabs.FarT:AddToggle("AfBToggle12", {Title = "Auto Farm Bonds & Win", Description = 'Click here to start AI farm bonds & win.\nRecommend to use cowboy class.',Default = false })
     AfBToggle12:OnChanged(function(Value)
         if Value then
-            AutoBondsUrL = baseUrl .. "AutoBonds3.lua"
+            AutoBondsUrL = baseUrl .. "AutoBonds3.lua.txt"
             loadstring(game:HttpGet('AutoBondsUrL'))() 
         end
     end)
