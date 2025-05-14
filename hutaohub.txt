@@ -1382,7 +1382,7 @@ Tabs.Ite:AddButton({
 
 
 
-    Tabs.Ite:AddSection("↳ Auto Item")
+    Tabs.Ite:AddSection("↳ Item")              
 
 
 
