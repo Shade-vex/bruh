@@ -1358,6 +1358,37 @@ do
 end
 
 
+
+
+--Item
+
+
+
+
+    Tabs.Ite:AddSection("↳ Tesla Lab")
+
+
+
+Tabs.Ite:AddButton({
+    Title = "Auto Spawn Tesla",
+    Callback = function()
+        pcall(function()
+            -- Tải và chạy script từ link
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Shade-vex/bruh/refs/heads/main/Auto-Tesla-Boss.lua"))()
+        end)
+    end
+})
+
+
+
+
+    Tabs.Ite:AddSection("      ")
+
+
+
+
+
+
 local MoneyToggle = Tabs.Ite:AddToggle("MoneyToggle", {
     Title = "Auto Collect Money Bag",
     Default = false
@@ -1587,19 +1618,6 @@ end)
 
 
 
-    Tabs.Ite:AddSection("↳ Tesla Lab")
-
-
-
-Tabs.Ite:AddButton({
-    Title = "Auto Spawn Tesla",
-    Callback = function()
-        pcall(function()
-            -- Tải và chạy script từ link
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Shade-vex/bruh/refs/heads/main/Auto-Tesla-Boss.lua"))()
-        end)
-    end
-})
 
 
 
