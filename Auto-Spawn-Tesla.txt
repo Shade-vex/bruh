@@ -1,0 +1,47 @@
+-- Bước 1: Chạy script teleport ngay lập tức
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Shade-vex/bruh/refs/heads/main/teleport-to-tesla.lua"))()
+
+-- Bước 2: Sau 5-6 giây, nhảy + bật xuyên tường + chạy collect gun
+task.delay(math.random(5, 6), function()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+    local runService = game:GetService("RunService")
+
+    -- Nhảy
+    if humanoid then
+        humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    end
+
+    -- Bật xuyên tường
+    local function enableNoClip()
+        for _, part in pairs(character:GetDescendants()) do
+            if part:IsA("BasePart") then
+                part.CanCollide = false
+            end
+        end
+    end
+
+    local function disableNoClip()
+        for _, part in pairs(character:GetDescendants()) do
+            if part:IsA("BasePart") then
+                part.CanCollide = true
+            end
+        end
+    end
+
+    local noclipConnection = runService.Stepped:Connect(function()
+        enableNoClip()
+    end)
+
+    -- Chạy script collect gun cùng lúc
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Shade-vex/bruh/refs/heads/main/Auto-collect-gun.lua.txt"))()
+
+    -- Sau 60 giây tắt xuyên tường
+    task.delay(60, function()
+        if noclipConnection then
+            noclipConnection:Disconnect()
+        end
+        disableNoClip()
+    end)
+end)
