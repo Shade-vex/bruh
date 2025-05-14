@@ -1365,7 +1365,7 @@ end
 
 
 
-    Tabs.Ite:AddSection("↳ Tesla Lab")
+    Tabs.Ite:AddSection("↳ Tesla")
 
 
 
@@ -1382,7 +1382,7 @@ Tabs.Ite:AddButton({
 
 
 
-    Tabs.Ite:AddSection("↳ Item Game")
+    Tabs.Ite:AddSection("↳ Auto Item")
 
 
 
