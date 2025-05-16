@@ -146,6 +146,7 @@ AddButton(Tab1o, {
    Section = AddSection(Tab1o, {"Island 1"})
 
 
+
 local espEnabled = false
 local espPart = nil
 
@@ -156,7 +157,7 @@ AddButton(Tab1o, {
 
         if espEnabled then
             -- Tạo part tại tọa độ
-            local islandPosition = Vector3.new(-21.5, 30, 372.2) -- Thay tọa độ theo ý bạn
+            local islandPosition = Vector3.new(332.7, 30, -168.1) -- Thay tọa độ theo ý bạn
             espPart = Instance.new("Part")
             espPart.Anchored = true
             espPart.CanCollide = false
@@ -194,6 +195,115 @@ AddButton(Tab1o, {
 })
 
 
+
+
+
+
+
+   Section = AddSection(Tab1o, {"Island 2"})
+
+
+local espEnabled = false
+local espPart = nil
+
+AddButton(Tab1o, {
+    Name = "Esp Island 2",
+    Callback = function()
+        espEnabled = not espEnabled
+
+        if espEnabled then
+            -- Tạo part tại tọa độ
+            local islandPosition = Vector3.new(312.0, 30, 204.6) -- Thay tọa độ theo ý bạn
+            espPart = Instance.new("Part")
+            espPart.Anchored = true
+            espPart.CanCollide = false
+            espPart.Transparency = 1
+            espPart.Size = Vector3.new(1, 1, 1)
+            espPart.Position = islandPosition
+            espPart.Name = "Island2ESP"
+            espPart.Parent = workspace
+
+            -- BillboardGui
+            local billboardGui = Instance.new("BillboardGui")
+            billboardGui.Size = UDim2.new(0, 100, 0, 40)
+            billboardGui.Adornee = espPart
+            billboardGui.AlwaysOnTop = true
+            billboardGui.StudsOffset = Vector3.new(0, 2, 0)
+            billboardGui.Parent = espPart
+
+            local textLabel = Instance.new("TextLabel")
+            textLabel.Size = UDim2.new(1, 0, 1, 0)
+            textLabel.BackgroundTransparency = 1
+            textLabel.Text = "Island 2"
+            textLabel.TextColor3 = Color3.new(1, 1, 0)
+            textLabel.TextStrokeTransparency = 0
+            textLabel.TextScaled = true
+            textLabel.Font = Enum.Font.SourceSansBold
+            textLabel.Parent = billboardGui
+        else
+            -- Xóa ESP nếu có
+            if espPart and espPart.Parent then
+                espPart:Destroy()
+                espPart = nil
+            end
+        end
+    end
+})
+
+
+
+
+   Section = AddSection(Tab1o, {"Island 3"})
+
+
+
+
+local espEnabled = false
+local espPart = nil
+
+AddButton(Tab1o, {
+    Name = "Esp Island 3",
+    Callback = function()
+        espEnabled = not espEnabled
+
+        if espEnabled then
+            -- Tạo part tại tọa độ
+            local islandPosition = Vector3.new(-21.5, 30, 372.2) -- Thay tọa độ theo ý bạn
+            espPart = Instance.new("Part")
+            espPart.Anchored = true
+            espPart.CanCollide = false
+            espPart.Transparency = 1
+            espPart.Size = Vector3.new(1, 1, 1)
+            espPart.Position = islandPosition
+            espPart.Name = "Island3ESP"
+            espPart.Parent = workspace
+
+            -- BillboardGui
+            local billboardGui = Instance.new("BillboardGui")
+            billboardGui.Size = UDim2.new(0, 100, 0, 40)
+            billboardGui.Adornee = espPart
+            billboardGui.AlwaysOnTop = true
+            billboardGui.StudsOffset = Vector3.new(0, 2, 0)
+            billboardGui.Parent = espPart
+
+            local textLabel = Instance.new("TextLabel")
+            textLabel.Size = UDim2.new(1, 0, 1, 0)
+            textLabel.BackgroundTransparency = 1
+            textLabel.Text = "Island 3"
+            textLabel.TextColor3 = Color3.new(1, 1, 0)
+            textLabel.TextStrokeTransparency = 0
+            textLabel.TextScaled = true
+            textLabel.Font = Enum.Font.SourceSansBold
+            textLabel.Parent = billboardGui
+        else
+            -- Xóa ESP nếu có
+            if espPart and espPart.Parent then
+                espPart:Destroy()
+                espPart = nil
+            end
+        end
+    end
+})
 
 
 
@@ -358,120 +468,14 @@ AddButton(Tab1o, {
 })
 
 
-   Section = AddSection(Tab1o, {"Island 2"})
-
-
-local espEnabled = false
-local espPart = nil
-
-AddButton(Tab1o, {
-    Name = "Esp Island 2",
-    Callback = function()
-        espEnabled = not espEnabled
-
-        if espEnabled then
-            -- Tạo part tại tọa độ
-            local islandPosition = Vector3.new(312.0, 30, 204.6) -- Thay tọa độ theo ý bạn
-            espPart = Instance.new("Part")
-            espPart.Anchored = true
-            espPart.CanCollide = false
-            espPart.Transparency = 1
-            espPart.Size = Vector3.new(1, 1, 1)
-            espPart.Position = islandPosition
-            espPart.Name = "Island2ESP"
-            espPart.Parent = workspace
-
-            -- BillboardGui
-            local billboardGui = Instance.new("BillboardGui")
-            billboardGui.Size = UDim2.new(0, 100, 0, 40)
-            billboardGui.Adornee = espPart
-            billboardGui.AlwaysOnTop = true
-            billboardGui.StudsOffset = Vector3.new(0, 2, 0)
-            billboardGui.Parent = espPart
-
-            local textLabel = Instance.new("TextLabel")
-            textLabel.Size = UDim2.new(1, 0, 1, 0)
-            textLabel.BackgroundTransparency = 1
-            textLabel.Text = "Island 2"
-            textLabel.TextColor3 = Color3.new(1, 1, 0)
-            textLabel.TextStrokeTransparency = 0
-            textLabel.TextScaled = true
-            textLabel.Font = Enum.Font.SourceSansBold
-            textLabel.Parent = billboardGui
-        else
-            -- Xóa ESP nếu có
-            if espPart and espPart.Parent then
-                espPart:Destroy()
-                espPart = nil
-            end
-        end
-    end
-})
-
-
-
-
-   Section = AddSection(Tab1o, {"Island 3"})
-
-
-
-
-local espEnabled = false
-local espPart = nil
-
-AddButton(Tab1o, {
-    Name = "Esp Island 3",
-    Callback = function()
-        espEnabled = not espEnabled
-
-        if espEnabled then
-            -- Tạo part tại tọa độ
-            local islandPosition = Vector3.new(332.7, 30, -168.1) -- Thay tọa độ theo ý bạn
-            espPart = Instance.new("Part")
-            espPart.Anchored = true
-            espPart.CanCollide = false
-            espPart.Transparency = 1
-            espPart.Size = Vector3.new(1, 1, 1)
-            espPart.Position = islandPosition
-            espPart.Name = "Island3ESP"
-            espPart.Parent = workspace
-
-            -- BillboardGui
-            local billboardGui = Instance.new("BillboardGui")
-            billboardGui.Size = UDim2.new(0, 100, 0, 40)
-            billboardGui.Adornee = espPart
-            billboardGui.AlwaysOnTop = true
-            billboardGui.StudsOffset = Vector3.new(0, 2, 0)
-            billboardGui.Parent = espPart
-
-            local textLabel = Instance.new("TextLabel")
-            textLabel.Size = UDim2.new(1, 0, 1, 0)
-            textLabel.BackgroundTransparency = 1
-            textLabel.Text = "Island 3"
-            textLabel.TextColor3 = Color3.new(1, 1, 0)
-            textLabel.TextStrokeTransparency = 0
-            textLabel.TextScaled = true
-            textLabel.Font = Enum.Font.SourceSansBold
-            textLabel.Parent = billboardGui
-        else
-            -- Xóa ESP nếu có
-            if espPart and espPart.Parent then
-                espPart:Destroy()
-                espPart = nil
-            end
-        end
-    end
-})
-
-
-
-
-
-
 
 
 
    Section = AddSection(Tab1o, {"Island 4"})
+
+
+
+
 
 
 local espEnabled = false
@@ -484,7 +488,7 @@ AddButton(Tab1o, {
 
         if espEnabled then
             -- Tạo part tại tọa độ
-            local islandPosition = Vector3.new(312.0, 30, 204.6) -- Thay tọa độ theo ý bạn
+            local islandPosition = Vector3.new(-333.3, 30, 167.6) -- Thay tọa độ theo ý bạn
             espPart = Instance.new("Part")
             espPart.Anchored = true
             espPart.CanCollide = false
@@ -520,6 +524,17 @@ AddButton(Tab1o, {
         end
     end
 })
+
+
+
+
+
+
+
+
+
+
+
 
 
    Section = AddSection(Tab1o, {"Island 5"})
@@ -576,55 +591,9 @@ AddButton(Tab1o, {
 
 
 
-   Section = AddSection(Tab1o, {"Island 6"})
 
 
-local espEnabled = false
-local espPart = nil
 
-AddButton(Tab1o, {
-    Name = "Esp Island 6",
-    Callback = function()
-        espEnabled = not espEnabled
-
-        if espEnabled then
-            -- Tạo part tại tọa độ
-            local islandPosition = Vector3.new(-333.3, 30, 167.6) -- Thay tọa độ theo ý bạn
-            espPart = Instance.new("Part")
-            espPart.Anchored = true
-            espPart.CanCollide = false
-            espPart.Transparency = 1
-            espPart.Size = Vector3.new(1, 1, 1)
-            espPart.Position = islandPosition
-            espPart.Name = "Island6ESP"
-            espPart.Parent = workspace
-
-            -- BillboardGui
-            local billboardGui = Instance.new("BillboardGui")
-            billboardGui.Size = UDim2.new(0, 100, 0, 40)
-            billboardGui.Adornee = espPart
-            billboardGui.AlwaysOnTop = true
-            billboardGui.StudsOffset = Vector3.new(0, 2, 0)
-            billboardGui.Parent = espPart
-
-            local textLabel = Instance.new("TextLabel")
-            textLabel.Size = UDim2.new(1, 0, 1, 0)
-            textLabel.BackgroundTransparency = 1
-            textLabel.Text = "Island 6"
-            textLabel.TextColor3 = Color3.new(1, 1, 0)
-            textLabel.TextStrokeTransparency = 0
-            textLabel.TextScaled = true
-            textLabel.Font = Enum.Font.SourceSansBold
-            textLabel.Parent = billboardGui
-        else
-            -- Xóa ESP nếu có
-            if espPart and espPart.Parent then
-                espPart:Destroy()
-                espPart = nil
-            end
-        end
-    end
-})
 
 
 
