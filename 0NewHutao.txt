@@ -371,7 +371,7 @@ AddButton(Tab1o, {
 
         if espEnabled then
             -- Tạo part tại tọa độ
-            local islandPosition = Vector3.new(0, 30, 0) -- Thay tọa độ theo ý bạn
+            local islandPosition = Vector3.new(312.0, 30, 204.6) -- Thay tọa độ theo ý bạn
             espPart = Instance.new("Part")
             espPart.Anchored = true
             espPart.CanCollide = false
@@ -407,6 +407,7 @@ AddButton(Tab1o, {
         end
     end
 })
+
 
 
 
