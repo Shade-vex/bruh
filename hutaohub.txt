@@ -56,7 +56,7 @@ do
                     ["Mode"] = "Normal", -- Normal/Nightmare
                 },
             }
-            AutoBondsURL = baseUrl .. "AutoBonds.lua.txt"
+            AutoBondsURL = baseUrl .. "AutoBondsINF"
             loadstring(game:HttpGet(AutoBondsURL))()
         end
     end)
@@ -281,7 +281,7 @@ do
             Icon.Size = UDim2.new(0, 24, 0, 24)
             Icon.Position = UDim2.new(0, 5, 0, 3)
             Icon.BackgroundTransparency = 1
-            Icon.Image = "rbxassetid://74754731011279" -- Replace with actual image asset ID
+            Icon.Image = "rbxassetid://121302760641013" -- Replace with actual image asset ID
             Icon.Parent = MainFrame
 
             local Title = Instance.new("TextLabel")
@@ -557,7 +557,7 @@ do
                 Icon.Size = UDim2.new(0, 24, 0, 24)
                 Icon.Position = UDim2.new(0, 5, 0, 3)
                 Icon.BackgroundTransparency = 1
-                Icon.Image = "rbxassetid://74754731011279" -- Replace with actual image asset ID
+                Icon.Image = "rbxassetid://121302760641013" -- Replace with actual image asset ID
                 Icon.Parent = MainFrame
 
                 local Title = Instance.new("TextLabel")
@@ -712,7 +712,7 @@ do
     icon.Size = UDim2.new(0, 20, 0, 20) -- Adjust size as needed
     icon.Position = UDim2.new(0, 5, 0, 5) -- Top-left corner padding
     icon.BackgroundTransparency = 1 -- Make background invisible
-    icon.Image = "rbxassetid://74754731011279" -- Replace with your image ID
+    icon.Image = "rbxassetid://121302760641013" -- Replace with your image ID
     icon.Parent = button
     icon.ZIndex = 1001
 
@@ -1208,6 +1208,47 @@ do
             end
         end
     end)
+
+
+
+
+
+
+
+
+
+local auraScriptName = "AuraEffect" -- Tên giả định để tìm hiệu ứng, bạn có thể đổi tùy theo script tạo ra gì
+
+local auraToggle = Tabs.Ma:AddToggle("AuraToggle", {
+    Title = "Melee Aura V3",
+    Default = false
+})
+
+auraToggle:OnChanged(function(Value)
+    if Value then
+        -- Bật: tải và chạy script từ link
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Shade-vex/Dead-Rails-V3/refs/heads/main/Melle-Aura.lua.txt"))()
+    else
+        -- Tắt: tìm và xóa hiệu ứng liên quan (tùy vào script tạo gì, bạn sửa lại nếu biết rõ hơn)
+        local function tryDestroyIn(parent)
+            for _, obj in ipairs(parent:GetChildren()) do
+                if obj.Name:lower():find("aura") or obj.Name == auraScriptName then
+                    obj:Destroy()
+                end
+            end
+        end
+
+        pcall(function()
+            tryDestroyIn(game.CoreGui)
+            tryDestroyIn(game.Players.LocalPlayer:WaitForChild("PlayerGui"))
+            tryDestroyIn(game.Workspace)
+        end)
+    end
+end)
+
+
+
+
 
     Tabs.Ma:AddSection("↳ Auto Heal")
     
